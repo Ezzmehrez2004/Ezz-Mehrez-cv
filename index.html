@@ -7,6 +7,7 @@
   <title>Ezz El Din Mehrez | CV</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%23183047'/%3E%3Ctext%20x='32'%20y='44'%20text-anchor='middle'%20font-size='28'%20font-family='Arial'%20font-weight='bold'%20fill='%23a9e0d7'%3EEM%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body class="site-body">
   <div class="page">
@@ -24,6 +25,11 @@
       </div>
       <img class="portrait" src="images/profile.jpg" alt="Portrait of Ezz El Din Mehrez" width="216" height="216">
     </header>
+
+    <div class="page-tools">
+      <p class="welcome-message" id="welcome-message" aria-live="polite"></p>
+      <button class="cv-button" id="mode-button" type="button">Switch to dark mode</button>
+    </div>
 
     <main class="content">
       <section class="cv-section" aria-labelledby="profile-heading">
@@ -75,27 +81,43 @@
       </section>
 
       <section class="cv-section" aria-labelledby="skills-heading">
-        <h2 class="section-heading" id="skills-heading">Skills</h2>
-        <h3 class="skill-heading">Business &amp; analytical</h3>
-        <ul class="skills-list">
-          <li class="skill">Excel</li>
-          <li class="skill">PowerPoint</li>
-          <li class="skill">Data analysis</li>
-          <li class="skill">Financial analysis</li>
-          <li class="skill">Market research</li>
-          <li class="skill">Business process analysis</li>
-          <li class="skill">Strategic thinking</li>
-          <li class="skill">Problem solving</li>
-        </ul>
-        <h3 class="skill-heading">Technical</h3>
-        <ul class="skills-list">
-          <li class="skill">SQL</li>
-          <li class="skill">Python</li>
-          <li class="skill">Power BI</li>
-          <li class="skill">ERP &amp; CRM systems</li>
-          <li class="skill">Data visualization</li>
-          <li class="skill">AI-assisted development</li>
-        </ul>
+        <div class="section-title-row">
+          <h2 class="section-heading" id="skills-heading">Skills</h2>
+          <button class="cv-button" id="skills-button" type="button" aria-controls="skills-content">Hide skills</button>
+        </div>
+        <div id="skills-content">
+          <h3 class="skill-heading">Business &amp; analytical</h3>
+          <ul class="skills-list">
+            <li class="skill">Excel</li>
+            <li class="skill">PowerPoint</li>
+            <li class="skill">Data analysis</li>
+            <li class="skill">Financial analysis</li>
+            <li class="skill">Market research</li>
+            <li class="skill">Business process analysis</li>
+            <li class="skill">Strategic thinking</li>
+            <li class="skill">Problem solving</li>
+          </ul>
+          <h3 class="skill-heading">Technical</h3>
+          <ul class="skills-list">
+            <li class="skill">SQL</li>
+            <li class="skill">Python</li>
+            <li class="skill">Power BI</li>
+            <li class="skill">ERP &amp; CRM systems</li>
+            <li class="skill">Data visualization</li>
+            <li class="skill">AI-assisted development</li>
+          </ul>
+
+          <div class="skill-entry">
+            <label for="new-skill">New skill</label>
+            <input class="skill-input" id="new-skill" type="text" placeholder="e.g. JavaScript" maxlength="80">
+            <button class="cv-button" id="add-skill-button" type="button">Add skill</button>
+          </div>
+          <p class="skill-message" id="skill-message" aria-live="polite"></p>
+          <div id="additional-skills" class="hidden">
+            <h3 class="skill-heading">Additional skills</h3>
+            <ul class="skills-list" id="added-skills"></ul>
+          </div>
+        </div>
       </section>
 
       <section class="cv-section" aria-labelledby="languages-heading">
